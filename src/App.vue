@@ -6,6 +6,10 @@ let subtext = ref("");
 let inputData: number | null = null;
 
 function calculateWave(): number {
+	if (inputData === null) {
+		throw new Error("Input data is null");
+	}
+
 	const input = inputData;
 	const waveValue = 468 / input;
 	headline.value = `${waveValue.toFixed(3)} ft`;
